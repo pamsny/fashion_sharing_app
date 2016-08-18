@@ -1,0 +1,24 @@
+{
+  "name": "fashion_sharing_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamsny/fashion_sharing_app.git"
+  },
+  "author": "Pam <pamela.garza.sny@gmail.com> (https://github.com/pamsny)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pamsny/fashion_sharing_app/issues"
+  },
+  "homepage": "https://github.com/pamsny/fashion_sharing_app#readme",
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "feed": "^0.3.0"
+  }
+}
