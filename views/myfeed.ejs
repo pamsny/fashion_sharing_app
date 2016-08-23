@@ -1,10 +1,28 @@
 <% include partials/header %>
-<h1> this is your MY FEED PAGE  </h1>
-
-<% myfeed.forEach(function(myfeed){ %>
-  <div>
-    <h4><%= myfeed.name %></h4>
-    <img src="<%= myfeed.image %>">
+<div class="container">
+<header class="jumbotron">
+  <div class="conntainer">
+    <h1> Welcome to FRONTROW </h1>
+    <p> recommended fashion looks for you </p>
+    <p>
+      <a class="btn btn-primary btn-large" href="/myfeed/new">Add new post </a>
+    </p>
   </div>
+</header>
+
+
+<!-- <div class="row" textcenter style="display:flex; flex-wrap: wrap;"> -->
+    <div class="row text-center">
+      <% myfeed.forEach(function(myfeed){ %>
+        <div class="center-block">
+          <!-- **got rid of this!!! -->
+      <h4><%= myfeed.name %></h4>
+      <img src="<%= myfeed.image %>">
+      <div class="caption">
+      </div>
+          <h4><%= myfeed.name %></h4>
+        </div>
+      <% }); %>
+  </div>
+</div>
 <% include partials/footer %>
-  <% }); %>

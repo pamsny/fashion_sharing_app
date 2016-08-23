@@ -1,0 +1,12 @@
+<% include partials/header %>
+<h1>Create a new post </h1>
+<form action="/myfeed" method="POST">
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="image" placeholder="image url">
+  <button>Submit!</button>
+</form>
+
+<a href="/myfeed"> Go Back </a>
+<!--use the name field inside the route
+to grab data from the request.body -->
+<% include partials/footer %>
