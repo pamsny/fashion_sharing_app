@@ -1,7 +1,8 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
-
+// var mongoose = require(“mongoose”);
+// mongoose.connect(“mongoldb:localhost/sharing_app”);****
 
 app.use(bodyParser.urlencoded({extended: true}));
 // **this line is just necessary with body parser
