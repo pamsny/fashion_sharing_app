@@ -9,17 +9,18 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 // app.use(express.static("public"));
 
-var userUploadSchema = new mongoose.Schema({
+var myfeedSchema = new mongoose.Schema({
   name: String,
   Age: Number,
   image: String,
 });
 
-var userUpload = mongoose.model("userUpload", userUploadSchema);
+var Myfeed = mongoose.model("Myfeed", myfeedSchema);
+// the userupload will be a collections inside the main fashion blog database
 
-userUpload.create(
+Myfeed.create(
   {
-    name: "ellen",
+    name: "bethanny",
     age: 25 ,
     image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"
 
@@ -32,11 +33,11 @@ userUpload.create(
       }
     });
 
-var myfeed = [
-    {name : "outfit 1", image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"},
-    {name : "outfit 2", image: "https://farm3.staticflickr.com/2814/12365873205_3207e1e8dd.jpg"},
-    {name : "outfit 3", image: "https://farm6.staticflickr.com/5687/20885624345_41c1e53ae3.jpg"}
-];
+// var myfeed = [
+//     {name : "outfit 1", image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"},
+//     {name : "outfit 2", image: "https://farm3.staticflickr.com/2814/12365873205_3207e1e8dd.jpg"},
+//     {name : "outfit 3", image: "https://farm6.staticflickr.com/5687/20885624345_41c1e53ae3.jpg"}
+// ];
 
 app.get("/", function(req,res){
   res.render("homefeed");
@@ -44,7 +45,15 @@ app.get("/", function(req,res){
 
 
 app.get("/myfeed", function(req,res){
-  res.render("myfeed", {myfeed:myfeed});
+
+  Myfeed.find({}, function(err, allmyfeeds){
+    if(err){
+      console.log(err);
+    } else {
+      res.render("myfeed", {myfeed: allmyfeeds});
+    }
+  });
+  // res.render("myfeed", {myfeed:myfeed});
 });
 
 
