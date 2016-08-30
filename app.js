@@ -3,7 +3,7 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/fashiondblog");
+mongoose.connect("mongodb://localhost/fashionblog");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
@@ -19,9 +19,10 @@ var userUpload = mongoose.model("userUpload", userUploadSchema);
 
 userUpload.create(
   {
-    name: "pam",
-    age: 25,
+    name: "ellen",
+    age: 25 ,
     image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"
+
   }, function(err, userUpload){
     if(err){
       console.log(err);
