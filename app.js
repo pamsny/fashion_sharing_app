@@ -1,13 +1,35 @@
+
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
-// var mongoose = require(“mongoose”);
-// mongoose.connect(“mongoldb:localhost/sharing_app”);****
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/fashiondblog");
 
 app.use(bodyParser.urlencoded({extended: true}));
-// **this line is just necessary with body parser
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+// app.use(express.static("public"));
+
+var userUploadSchema = new mongoose.Schema({
+  name: String,
+  Age: Number,
+  image: String,
+});
+
+var userUpload = mongoose.model("userUpload", userUploadSchema);
+
+userUpload.create(
+  {
+    name: "pam",
+    age: 25,
+    image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"
+  }, function(err, userUpload){
+    if(err){
+      console.log(err);
+    } else {
+        console.log("you made a new post");
+        console.log(userUpload);
+      }
+    });
 
 var myfeed = [
     {name : "outfit 1", image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"},
