@@ -16,7 +16,6 @@ var myfeedSchema = new mongoose.Schema({
 });
 
 var Myfeed = mongoose.model("Myfeed", myfeedSchema);
-// the userupload will be a collections inside the main fashion blog database
 
 Myfeed.create(
   {
@@ -33,11 +32,6 @@ Myfeed.create(
       }
     });
 
-// var myfeed = [
-//     {name : "outfit 1", image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg"},
-//     {name : "outfit 2", image: "https://farm3.staticflickr.com/2814/12365873205_3207e1e8dd.jpg"},
-//     {name : "outfit 3", image: "https://farm6.staticflickr.com/5687/20885624345_41c1e53ae3.jpg"}
-// ];
 
 app.get("/", function(req,res){
   res.render("homefeed");
@@ -53,20 +47,24 @@ app.get("/myfeed", function(req,res){
       res.render("myfeed", {myfeed: allmyfeeds});
     }
   });
-  // res.render("myfeed", {myfeed:myfeed});
 });
 
 
 app.post("/myfeed", function(req,res){
   var name = req.body.name;
-  var image = req.body.image
+  var image = req.body.image;
   var newMyfeed = {name:name, image:image}
-  myfeed.push(newMyfeed);
-  //how to pick data in forma and add to posts array
-  //then go back to regular list of array
-  res.redirect("/myfeed");
-  // **here the default is to redirect to myfeed as a GET REQUEST
+  //to make a new post and add to the feed!!!
+Myfeed.create(newMyfeed, function(err, newnewfeed){
+  if(err){
+    console.log(err);
+  } else {
+    res.redirect("/myfeed");
+  }
+    });
 });
+
+
 
 app.get("/myfeed/new", function(req,res){
   res.render("new.ejs");
