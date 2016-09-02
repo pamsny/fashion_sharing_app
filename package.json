@@ -1,7 +1,11 @@
 {
   "name": "fashion_sharing_app",
-  "version": "1.0.0",
   "description": "",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.2.2",
+    "npm": "3.9.5"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
