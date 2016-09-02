@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 // app.use(express.static("public"));
 
+
 var myfeedSchema = new mongoose.Schema({
   name: String,
   description: String,
@@ -96,7 +97,7 @@ app.get("/myfeed/:id", function(req, res) {
 
 
 
-//
+// 
 // app.listen(3000, function(){
 //   console.log("this app has started!");
 // });
