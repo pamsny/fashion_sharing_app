@@ -58,13 +58,13 @@ app.post("/myfeed", function(req,res){
   var desc = req.body.description;
   var newMyfeed = {name: name, image: image, description: desc }
   //to make a new post and add to the feed!!!
-Myfeed.create(newMyfeed, function(err, newnewfeed){
-  if(err){
-    console.log(err);
-  } else {
-    res.redirect("/myfeed");
-  }
-    });
+// Myfeed.create(newMyfeed, function(err, newnewfeed){
+//   if(err){
+//     console.log(err);
+//   } else {
+//     res.redirect("/myfeed");
+//   }
+//     });
 });
 
 
