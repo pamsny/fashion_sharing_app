@@ -3,7 +3,9 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/fashionblog");
+// mongoose.connect("mongodb://localhost/fashionblog");
+mongoose.connect("mongodb://pamela:princess@ds019906.mlab.com:19906/fashionblog");
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
