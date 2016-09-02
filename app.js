@@ -55,7 +55,8 @@ app.get("/myfeed", function(req,res){
 app.post("/myfeed", function(req,res){
   var name = req.body.name;
   var image = req.body.image;
-  var newMyfeed = {name:name, image:image}
+  var desc = req.body.description;
+  var newMyfeed = {name: name, image: image, description: desc }
   //to make a new post and add to the feed!!!
 Myfeed.create(newMyfeed, function(err, newnewfeed){
   if(err){
@@ -89,6 +90,7 @@ app.get("/myfeed/:id", function(req, res) {
       });
   })
 
+//auth routes
 
 
 
