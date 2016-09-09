@@ -3,8 +3,8 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-// mongoose.connect("mongodb://localhost/fashionblog");
-mongoose.connect("mongodb://pamela:princess@ds019906.mlab.com:19906/fashionblog");
+mongoose.connect("mongodb://localhost/fashionblog");
+// mongoose.connect("mongodb://pamela:princess@ds019906.mlab.com:19906/fashionblog");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,7 +24,7 @@ var Myfeed = mongoose.model("Myfeed", myfeedSchema);
 // Myfeed.create(
 //   {
 //     name: "bethanny",
-//     description: "This outfit is supper cute. you can literally wear anywhere!",
+//     description: "this is CUTE!",
 //     age: "25",
 //     image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg",
 //
@@ -96,8 +96,6 @@ app.get("/myfeed/:id", function(req, res) {
 //auth routes
 
 
-
-// 
 // app.listen(3000, function(){
 //   console.log("this app has started!");
 // });
