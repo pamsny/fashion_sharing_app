@@ -4,15 +4,21 @@ var Comment = require("./models/comment");
 
 var data = [
   {
-    name: "sofia",
+    name: "Anne marie",
     image: "http://media3.onsugar.com/files/2014/04/15/954/n/4981322/af4fbfb059f53118_Untitled-1.xxxlarge/i/Sydney-Fashion-Blogger-Interview.jpg",
-    description: "blahhhhhh 1"
+    description: "this outfit is ...."
   },
   {
-    name: "megan",
+    name: "Megan",
     image: "http://3m1yvb3ekpj045f9t02a2ryq.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/peaceloveshea-682x1024.jpg",
-    desccription: "blahhhhh2"
+    desccription: "this outfit is"
+  },
+  {
+    name: "Letty",
+    image: "http://media3.popsugar-assets.com/files/2015/07/24/870/n/1922398/2eacc4532e3346c0_Screen_Shot_2015-07-24_at_3.52.35_PMJOoSDO.xxxlarge/i/How-Dress-Like-Fashion-Blogger.jpg",
+    desccription: "this outfit is..."
   }
+
 ]
 
 
