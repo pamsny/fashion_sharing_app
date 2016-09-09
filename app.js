@@ -3,8 +3,8 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/fashionblog");
-// mongoose.connect("mongodb://lola:lola1@ds019906.mlab.com:19906/fashionblog");
+// mongoose.connect("mongodb://localhost/fashionblog");
+mongoose.connect("mongodb://lola:lola1@ds019906.mlab.com:19906/fashionblog");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -96,11 +96,11 @@ app.get("/myfeed/:id", function(req, res) {
 // auth routes
 
 
-app.listen(3000, function(){
-  console.log("this app has started!");
-});
-
-
-// app.listen(process.env.PORT || 3000, function(){
-//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// app.listen(3000, function(){
+//   console.log("this app has started!");
 // });
+
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
