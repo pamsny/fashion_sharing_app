@@ -4,7 +4,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/fashionblog");
-// mongoose.connect("mongodb://pamela:princess@ds019906.mlab.com:19906/fashionblog");
+// mongoose.connect("mongodb://lola:lola1@ds019906.mlab.com:19906/fashionblog");
 
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,7 +23,7 @@ var Myfeed = mongoose.model("Myfeed", myfeedSchema);
 
 // Myfeed.create(
 //   {
-//     name: "bethanny",
+//     name: "marcia",
 //     description: "this is CUTE!",
 //     age: "25",
 //     image: "https://farm6.staticflickr.com/5003/5347012547_617da5c271.jpg",
@@ -36,8 +36,8 @@ var Myfeed = mongoose.model("Myfeed", myfeedSchema);
 //         console.log(userUpload);
 //       }
 //     });
-
-
+//
+//
 app.get("/", function(req,res){
   res.render("homefeed");
 });
@@ -61,13 +61,13 @@ app.post("/myfeed", function(req,res){
   var desc = req.body.description;
   var newMyfeed = {name: name, image: image, description: desc }
   //to make a new post and add to the feed!!!
-// Myfeed.create(newMyfeed, function(err, newnewfeed){
-//   if(err){
-//     console.log(err);
-//   } else {
-//     res.redirect("/myfeed");
-//   }
-//     });
+Myfeed.create(newMyfeed, function(err, newnewfeed){
+  if(err){
+    console.log(err);
+  } else {
+    res.redirect("/myfeed");
+  }
+    });
 });
 
 
@@ -91,16 +91,16 @@ app.get("/myfeed/:id", function(req, res) {
         res.render("details", {Myfeed: foundfeed});
         }
       });
-  })
+  });
 
-//auth routes
-
-
-// app.listen(3000, function(){
-//   console.log("this app has started!");
-// });
+// auth routes
 
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen(3000, function(){
+  console.log("this app has started!");
 });
+
+
+// app.listen(process.env.PORT || 3000, function(){
+//   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+// });
