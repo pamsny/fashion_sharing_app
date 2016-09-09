@@ -1,0 +1,14 @@
+<% include ../partials/header %>
+<h1>this page will have more information about your post</h1>
+<img src="<%= Myfeed.image %>">
+<p><%=Myfeed.name%></p>
+
+<p><%=Myfeed.description%></p>
+
+<p>
+  <a class="btn btn-success" href="/myfeed/<%= Myfeed._id %>/comments/new">Add a new comment</a>
+</p>
+<% Myfeed.comments.forEach(function(comment){ %>
+<p>
+  <strong><%= comment.author %></strong> - <%= comment.text %></p>
+<% }) %>
